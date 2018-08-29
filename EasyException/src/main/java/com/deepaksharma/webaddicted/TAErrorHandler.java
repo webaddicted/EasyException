@@ -1,5 +1,6 @@
 package com.deepaksharma.webaddicted;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -32,16 +33,17 @@ public class TAErrorHandler implements PermissionListener {
     }
 
     //    Toast & PopUp Type Alert
-    public static void handler(@NonNull Context context, @NonNull Exception exception) {
+    public static void handler(@NonNull Activity activity, @NonNull Exception exception) {
         String expMsg = exception.getMessage();
-        if (context != null && appContext != null) {
+        if (activity != null && appContext != null) {
 //        if (mErrorEnable != null && mErrorEnable.equals(ErrorEnable.ENABLE)) {
             if (mAlertType != null && mAlertType.equals(AlertType.TOAST)) {
-                Toast.makeText(context, expMsg, Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, expMsg, Toast.LENGTH_SHORT).show();
             } else if (mAlertType != null && mAlertType.equals(AlertType.POP_UP)) {
-                alertDialog(context, expMsg);
+                alertDialog(activity, expMsg);
+            }else if (mAlertType != null && mAlertType.equals(AlertType.NONE)) {
             }
-            writeFile(context, expMsg);
+            writeFile(activity, expMsg);
         }
     }
 
@@ -53,21 +55,23 @@ public class TAErrorHandler implements PermissionListener {
             if (mAlertType != null && mAlertType.equals(AlertType.SNACKBAR)) {
                 if (view != null) {
 //                    logToFile(exceptionMsg);
-                    FileWrite.writeFile(appContext, expMsg);
                     Snackbar.make(view, expMsg, Snackbar.LENGTH_LONG).show();
+                    FileWrite.writeFile(appContext, expMsg);
                 }
+            }else if (mAlertType != null && mAlertType.equals(AlertType.NONE)) {
+                FileWrite.writeFile(appContext, expMsg);
             }
         }
     }
 
     //      POP_UP Alert Dialog
-    private static void alertDialog(Context context, String exceptionMsg) {
-        AlertDialog builder = new AlertDialog.Builder(context).create();
-        builder.setTitle(context.getResources().getString(R.string.EXP_TITLE));
+    private static void alertDialog(Activity activity, String exceptionMsg) {
+        AlertDialog builder = new AlertDialog.Builder(activity).create();
+        builder.setTitle(activity.getResources().getString(R.string.EXP_TITLE));
         builder.setMessage(exceptionMsg);
         builder.setCancelable(true);
         builder.setButton(
-                context.getResources().getString(R.string.OK),
+                activity.getResources().getString(R.string.OK),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
@@ -100,6 +104,5 @@ public class TAErrorHandler implements PermissionListener {
             context.startActivity(intent);
             new TAErrorHandler().permissionInit();
         }
-
     }
 }
