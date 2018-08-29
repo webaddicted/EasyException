@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">library</string>
+    <string name="TOAST">TOAST</string>
+    <string name="SNACKBAR">SNACKBAR</string>
+    <string name="POP_UP">POP_UP</string>
+    <string name="SNACKBAR_ERROR">Invalid view.</string>
+    <string name="EXP_TITLE">Alert</string>
+    <string name="OK">Ok</string>
+
+
+</resources>

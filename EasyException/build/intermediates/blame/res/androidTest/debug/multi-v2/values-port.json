@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/deepaksharma/Desktop/ErrorHandle/EasyException/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/deepaksharma/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/c2328915c9244275babcdcc0e0ffe15f/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ErrorHandleing</string>
+    <string name="TOAST">TOAST</string>
+    <string name="SNACKBAR">SNACKBAR</string>
+    <string name="POP_UP">POP_UP</string>
+</resources>

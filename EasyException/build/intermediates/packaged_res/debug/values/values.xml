@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="EXP_TITLE">Alert</string>
+    <string name="OK">Ok</string>
+    <string name="POP_UP">POP_UP</string>
+    <string name="SNACKBAR">SNACKBAR</string>
+    <string name="SNACKBAR_ERROR">Invalid view.</string>
+    <string name="TOAST">TOAST</string>
+    <string name="app_name">library</string>
+</resources>
