@@ -23,8 +23,11 @@ Initialize library in application class
      TAErrorHandler.handler(this, exp);
 
 # ScreenShot
+<img src="https://github.com/webaddicted/EasyException/blob/master/screenshot/home.png" width="400">   <img src="https://github.com/webaddicted/EasyException/blob/master/screenshot/exception.png" width="400">
 
+<!--
 ![demo](https://github.com/webaddicted/EasyException/blob/master/screenshot/home.png)
 ![demo](https://github.com/webaddicted/EasyException/blob/master/screenshot/exception.png)
+-->
 
 
